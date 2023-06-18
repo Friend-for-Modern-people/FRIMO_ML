@@ -2,20 +2,23 @@
 
 FRIMO_ML is a repository for the parts of the FRIMO project that use machine learning.
 
-Language : <b>en</b> | [kr](https://github.com/Friend-for-Modern-people/FRIMO_ML/blob/main/Documentation/README_ko.md)
-
 <br> <br>
 
 ## <b> Repository Structure </b>
 
 <br>
 
-* <b> Model </b>
-    > FRIMO's models are located here.
-    * Emotion Recognition
-        * Implement the ability to understand the emotion behind a conversation.
-        * Implemented Model : [KoBERT]()
-        * Folder Description : See [this doc](https://github.com/Friend-for-Modern-people/FRIMO_ML/blob/main/Documentation/Emotion-Recognition%20Documentation).
+* <b> Model / Emotion Recognition </b>
+    > Emotion Recognition models is located here.
+    * File
+        * <b> train.py </b> : Python file for training
+        * <b>  predict.py </b> : Python file for recognition
+        * <b> 감성대화말뭉치(최종데이터)_Training.json </b> : JSON files used for training
+        * <b> 감성대화말뭉치(최종데이터)_Validation.json </b> : JSON files used for validation
+        * <b> final_train.csv </b> : CSV file we plan to use for data augmentation
+        * <b> final_test.csv </b> : CSV file we plan to use for data augmentation
+    * Implement the ability to understand the emotion behind a conversation.
+    * Implemented Model : [KoBERT]()
 * <b> README </b>
     > A markdown file containing a description of FRIMO_ML.
   
@@ -24,7 +27,22 @@ Language : <b>en</b> | [kr](https://github.com/Friend-for-Modern-people/FRIMO_ML
 ## <b> Model Implementation </b>
 
 <br>
-    
+
+* Model Structure
+
+![image](https://github.com/Friend-for-Modern-people/FRIMO_ML/assets/31691750/1142cc55-8912-456e-a8c6-aa46a7cbd461)
+
+<br>
+
+* How to use
+    * Training :
+    > python train.py --train_data [file_path] --test_data [file_path] --num_epoch [number]
+  
+    * Predict :
+    > python predict.py --pt_path [file_path]
+
+<br>
+
 * Emotion Recognition
     * [X] <b> Implement Prototype </b>
     * [X] <b> Handle Requirements </b>
